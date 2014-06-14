@@ -1,7 +1,14 @@
 'use strict';
 /*global q4: true */
 
-window.q4 = window.q4 || {};
+/**
+ * TODO:
+ *      Need to add parameters for colour, width, etc...
+ *      Write unit test
+ *      Add to Bower
+ */
+
+window.gaugeCanvas = window.gaugeCanvas || {};
 
 (function() {
     /**
@@ -9,7 +16,7 @@ window.q4 = window.q4 || {};
      * @param canvas the canvas object to draw in
      * @constructor
      */
-    q4.Widget = function(canvas){
+    gaugeCanvas.Widget = function(canvas){
         this._canvas = canvas;
         this._context = this._canvas.getContext('2d');
         this._context.save();
@@ -21,9 +28,9 @@ window.q4 = window.q4 || {};
      * @param max
      * @constructor
      */
-    q4.GaugeWidget = function(canvas, _max) {
+    gaugeCanvas.GaugeWidget = function(canvas, _max) {
         //Super constructor
-        q4.Widget.call(this, canvas);
+        gaugeCanvas.Widget.call(this, canvas);
 
         var max = _max; //The max value of the widget
         var minAngle = 0.8; //Start coefficient
@@ -83,7 +90,7 @@ window.q4 = window.q4 || {};
 
         };
 
-        q4.GaugeWidget.prototype = new q4.Widget(canvas);
+        gaugeCanvas.GaugeWidget.prototype = new gaugeCanvas.Widget(canvas);
     };
 
     /**
@@ -92,9 +99,9 @@ window.q4 = window.q4 || {};
      * @param _max
      * @constructor
      */
-    q4.LoadingCircleWidget = function(canvas, _max) {
+    gaugeCanvas.LoadingCircleWidget = function(canvas, _max) {
         //Super constructor
-        q4.Widget.call(this, canvas);
+        gaugeCanvas.Widget.call(this, canvas);
 
         var max = _max; //The max value of the widget
         var minAngle = 1.5; //Start coefficient
@@ -150,7 +157,7 @@ window.q4 = window.q4 || {};
 
         };
 
-        q4.GaugeWidget.prototype = new q4.Widget(canvas);
+        gaugeCanvas.GaugeWidget.prototype = new gaugeCanvas.Widget(canvas);
     };
 
 })();
