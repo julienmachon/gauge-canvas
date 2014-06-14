@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <h1>Gauge</h1>
+    <canvas id="w1" width="150" height="150"></canvas>
+    <br/>
+    <h1>Loading circle</h1>
+    <canvas id="w2" width="150" height="150"></canvas>
+
+<script src="../gauge-canvas.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    // Create Widget and get reference obj
+    var myWidget1 = new q4.GaugeWidget(document.getElementById('w1'), 100);
+    var myWidget2 = new q4.LoadingCircleWidget(document.getElementById('w2'), 100);
+
+    // Draw it
+//    myWidget1.draw(100);
+    test(myWidget1, 1);
+//    myWidget2.draw(50);
+    test(myWidget2, 1);
+
+    function test(widget, val) {
+        widget.draw(val);
+        if(val<100) {
+            setTimeout(function() {
+                test(widget, val+1);
+            }, 10);
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
