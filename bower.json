@@ -1,0 +1,26 @@
+{
+  "name": "gauge-canvas",
+  "main": "gauge-canvas.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/julienmachon/gauge-canvas",
+  "authors": [
+    "Julien Machon <julienmachon@gmail.com>"
+  ],
+  "description": "Library drawing different type of gauges using canvas.",
+  "keywords": [
+    "canvas",
+    "widget",
+    "gauge",
+    "loading",
+    "circle"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples"
+  ]
+}
